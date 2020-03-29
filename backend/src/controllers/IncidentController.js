@@ -40,7 +40,6 @@ module.exports = {
       value,
       ong_id,
     });
-    console.log(id);
     return response.json({ id });
   },
 
@@ -54,7 +53,7 @@ module.exports = {
       .select("ong_id")
       .first();
 
-    if (incident.ong_id != ong_id) {
+    if (incident.ong_id !== ong_id) {
       return response.status(401).json({ erro: "Operation not permitted." });
     }
 
